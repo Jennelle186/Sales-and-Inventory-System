@@ -6,12 +6,12 @@ import { getAuth, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
 
 //Firebase SDK - this is the web app's configuration which can also be found in the Firebase project under its own project settings
 const firebaseConfig = {
-  apiKey: "AIzaSyDgTMolUzap55DHaht9tQSJao-RWgwFlLc",
-  authDomain: "trial-a098b.firebaseapp.com",
-  projectId: "trial-a098b",
-  storageBucket: "trial-a098b.appspot.com",
-  messagingSenderId: "645259701687",
-  appId: "1:645259701687:web:f391b3ff52f78bc88f0c32",
+  apiKey: "AIzaSyDszzxIk1x2fszxDvUgJLj-3e4_bpmPUes",
+  authDomain: "lines-hub.firebaseapp.com",
+  projectId: "lines-hub",
+  storageBucket: "lines-hub.appspot.com",
+  messagingSenderId: "1024221995912",
+  appId: "1:1024221995912:web:d33eae88e99cee96ec903d",
 };
 
 //Initializing Firebase

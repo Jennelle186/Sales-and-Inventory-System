@@ -200,7 +200,7 @@ const ProductTable = () => {
 
   const handleRowClick = (rowData) => {
     console.log(rowData[0]);
-    navigate("/stock-details", { state: rowData[0] });
+    // navigate("/stock-details", { state: rowData[0] });
     // setId(rowData[0]);
   };
 
