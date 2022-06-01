@@ -58,6 +58,7 @@ const History = (props) => {
       options: {
         filter: true,
         sort: true,
+        display: false,
       },
     },
     {
@@ -66,6 +67,7 @@ const History = (props) => {
       options: {
         filter: true,
         sort: true,
+        display: false,
       },
     },
     {
@@ -171,6 +173,8 @@ const History = (props) => {
                     )
                   );
                   console.log("deleted");
+                  alert("Deleted");
+                  // window.location.reload();
                 } catch (err) {
                   console.log(err);
                 }
@@ -206,7 +210,7 @@ const History = (props) => {
       const batch = writeBatch(db);
 
       historyId.forEach((id) => {
-        // batch.delete(doc(db, "products", docID, "history", id));
+        batch.delete(doc(db, "products", docID, "history", id));
         console.log(docID, "documentID");
         console.log(historyId, "historyID");
       });

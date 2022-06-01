@@ -159,7 +159,7 @@ const CustomerInfo = ({
   async function recordStockOut() {
     //saving each of the items in a different document
     for (const item of cartItems) {
-      console.log(item);
+      // console.log(item);
       const historyRef = await doc(db, "products", item.id);
       const colRef = collection(historyRef, "history");
       await addDoc(colRef, {
@@ -215,6 +215,7 @@ const CustomerInfo = ({
   };
 
   //----------------------------------------
+
   let credit = Number(totalAmount) - (downpayment ? Number(downpayment) : 0);
 
   return (
@@ -398,6 +399,7 @@ const CustomerInfo = ({
                       type="number"
                       label="Downpayment"
                       value={downpayment}
+                      step="0.1"
                       required
                       onChange={(e) => {
                         if (Number(e.target.value) < 0) {

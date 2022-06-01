@@ -98,8 +98,6 @@ const Ordering = () => {
       (item) => item.id === id && item.color === color
     );
 
-    console.log(supplier, "supplier");
-
     if (productExist) {
       setCartItems(
         cartItems.map((item) =>
@@ -174,8 +172,6 @@ const Ordering = () => {
   };
 
   //--------------------------------------------------------------
-
-  console.log(cartItems, "cartItems");
 
   return (
     <div>
