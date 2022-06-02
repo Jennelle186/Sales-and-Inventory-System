@@ -17,10 +17,10 @@ import {
   deleteDoc,
   writeBatch,
 } from "firebase/firestore";
+
 const History = (props) => {
   const [product, setProduct] = useState([]);
-  const { state } = useLocation(); //document ID here & not sure with this yet
-  const navigate = useNavigate();
+
   //fetching the products document
   useEffect(() => {
     let isMounted = true;
@@ -130,21 +130,61 @@ const History = (props) => {
         sort: true,
       },
     },
+    // {
+    //   name: "createdDate",
+    //   label: "Date when modified",
+    //   options: {
+    //     filter: true,
+    //     sort: true,
+    //     customBodyRender: (value, tableMeta, updateValue) => {
+    //       if (value) {
+    //         return new Date(value?.seconds * 1000).toLocaleDateString();
+    //       } else {
+    //         return "";
+    //       }
+    //     },
+    //   },
+    // },
     {
       name: "createdDate",
-      label: "Date when modified",
+      label: "Month",
       options: {
         filter: true,
         sort: true,
         customBodyRender: (value, tableMeta, updateValue) => {
-          if (value) {
-            return new Date(value?.seconds * 1000).toLocaleDateString();
-          } else {
-            return "";
-          }
+          return new Date(value.seconds * 1000).toLocaleString("en-us", {
+            month: "long",
+          });
         },
       },
     },
+    {
+      name: "createdDate",
+      label: "Date",
+      options: {
+        filter: true,
+        sort: true,
+        customBodyRender: (value, tableMeta, updateValue) => {
+          return new Date(value.seconds * 1000).toLocaleString("en-us", {
+            day: "numeric",
+          });
+        },
+      },
+    },
+    {
+      name: "createdDate",
+      label: "Year",
+      options: {
+        filter: true,
+        sort: true,
+        customBodyRender: (value, tableMeta, updateValue) => {
+          return new Date(value.seconds * 1000).toLocaleString("en-us", {
+            year: "numeric",
+          });
+        },
+      },
+    },
+
     {
       name: "status",
       label: "Status",
@@ -222,6 +262,7 @@ const History = (props) => {
       console.log(err);
     }
   }
+
   return (
     <div>
       <Grid style={{ padding: "1rem" }}>
