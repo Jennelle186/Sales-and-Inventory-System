@@ -158,7 +158,7 @@ const BoxDashboards = ({ totalAmount }) => {
           justify="flex-start"
         >
           <Grid item xs={12} sm={6} md={4} lg={3}>
-            <Link to="/Pending-Orders" style={{ textDecoration: "none" }}>
+            <Link to="/Order/Pending-Orders" style={{ textDecoration: "none" }}>
               <Card
                 sx={{
                   ":hover": {
@@ -182,7 +182,7 @@ const BoxDashboards = ({ totalAmount }) => {
           </Grid>
           <Grid item xs={12} sm={6} md={4} lg={3}>
             <Link
-              to="/Ready-to-be-delivered"
+              to="/Order/Ready-to-be-delivered"
               style={{ textDecoration: "none" }}
             >
               <Card
@@ -207,7 +207,10 @@ const BoxDashboards = ({ totalAmount }) => {
             </Link>
           </Grid>
           <Grid item xs={12} sm={6} md={4} lg={3}>
-            <Link to="/Delivered-Orders" style={{ textDecoration: "none" }}>
+            <Link
+              to="/Order/Delivered-Orders"
+              style={{ textDecoration: "none" }}
+            >
               <Card
                 sx={{
                   ":hover": {

@@ -16,6 +16,8 @@ import CategoryPage from "./Pages/CategoryPage/categoryPage";
 import PendingOrders from "./Components/OrderTable/PendingOrders";
 import ReadyToBeDelivered from "./Components/OrderTable/ReadyToBeDelivered";
 import DeliveredOrders from "./Components/OrderTable/DeliveredOrders";
+import Cancelled from "./Components/OrderTable/CancelledOrders";
+import ReturnedOrders from "./Components/OrderTable/ReturnedOrders";
 
 import History from "./Components/HistoryofProducts/history";
 
@@ -66,6 +68,7 @@ function App() {
         <Routes>
           {!isLoading ? (
             <>
+              {/* these are the routes the user can access when logged in */}
               <Route
                 path="/"
                 element={
@@ -139,7 +142,7 @@ function App() {
               />
 
               <Route
-                path="/Order"
+                path="Order"
                 element={
                   <PrivateRoute>
                     <Layout>
@@ -147,40 +150,59 @@ function App() {
                     </Layout>
                   </PrivateRoute>
                 }
-              />
-
-              <Route
-                path="/Pending-Orders"
-                element={
-                  <PrivateRoute>
-                    <Layout>
-                      <PendingOrders />
-                    </Layout>
-                  </PrivateRoute>
-                }
-              />
-
-              <Route
-                path="/Ready-to-be-delivered"
-                element={
-                  <PrivateRoute>
-                    <Layout>
-                      <ReadyToBeDelivered />
-                    </Layout>
-                  </PrivateRoute>
-                }
-              />
-
-              <Route
-                path="/Delivered-Orders"
-                element={
-                  <PrivateRoute>
-                    <Layout>
-                      <DeliveredOrders />
-                    </Layout>
-                  </PrivateRoute>
-                }
-              />
+              >
+                {" "}
+                <Route
+                  path=":Pending-Orders"
+                  element={
+                    <PrivateRoute>
+                      <Layout>
+                        <PendingOrders />
+                      </Layout>
+                    </PrivateRoute>
+                  }
+                />
+                <Route
+                  path=":Ready-to-be-delivered"
+                  element={
+                    <PrivateRoute>
+                      <Layout>
+                        <ReadyToBeDelivered />
+                      </Layout>
+                    </PrivateRoute>
+                  }
+                />
+                <Route
+                  path=":Delivered-Orders"
+                  element={
+                    <PrivateRoute>
+                      <Layout>
+                        <DeliveredOrders />
+                      </Layout>
+                    </PrivateRoute>
+                  }
+                />
+                <Route
+                  path=":Cancelled"
+                  element={
+                    <PrivateRoute>
+                      <Layout>
+                        <Cancelled />
+                      </Layout>
+                    </PrivateRoute>
+                  }
+                />
+                <Route
+                  path=":Returned"
+                  element={
+                    <PrivateRoute>
+                      <Layout>
+                        <ReturnedOrders />
+                      </Layout>
+                    </PrivateRoute>
+                  }
+                />
+              </Route>
 
               <Route
                 path="/add-orders"
@@ -217,6 +239,7 @@ function App() {
             </>
           ) : (
             <>
+              {/* If the user is not logged in, these are the pages they can access. */}
               <Route
                 path="/"
                 element={
