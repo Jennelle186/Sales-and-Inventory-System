@@ -2,19 +2,16 @@
 
 import React, { useEffect, useState } from "react";
 import MUIDataTable from "mui-datatables";
-import { useLocation, useNavigate } from "react-router-dom";
-import { ThemeProvider, createTheme, Stack, Grid, Button } from "@mui/material";
-import ButtonForm from "../Button/ButtonForm";
+
+import { ThemeProvider, createTheme, Grid } from "@mui/material";
+
 import { db } from "../../Firebase/utils";
 import {
-  collection,
   getDocs,
   collectionGroup,
   query,
-  getDoc,
   orderBy,
   doc,
-  deleteDoc,
   writeBatch,
 } from "firebase/firestore";
 
@@ -130,21 +127,6 @@ const History = (props) => {
         sort: true,
       },
     },
-    // {
-    //   name: "createdDate",
-    //   label: "Date when modified",
-    //   options: {
-    //     filter: true,
-    //     sort: true,
-    //     customBodyRender: (value, tableMeta, updateValue) => {
-    //       if (value) {
-    //         return new Date(value?.seconds * 1000).toLocaleDateString();
-    //       } else {
-    //         return "";
-    //       }
-    //     },
-    //   },
-    // },
     {
       name: "createdDate",
       label: "Month",
@@ -193,41 +175,6 @@ const History = (props) => {
         sort: true,
       },
     },
-    {
-      name: "Delete",
-      options: {
-        filter: false,
-        customBodyRender: (value, tableMeta, updateValue) => {
-          return (
-            <Button
-              onClick={(e) => {
-                try {
-                  console.log(tableMeta.rowData[0], tableMeta.rowData[1]);
-                  deleteDoc(
-                    doc(
-                      db,
-                      "products",
-                      tableMeta.rowData[0],
-                      "history",
-                      tableMeta.rowData[1]
-                    )
-                  );
-                  console.log("deleted");
-                  alert("Deleted");
-                  // window.location.reload();
-                } catch (err) {
-                  console.log(err);
-                }
-              }}
-              color="error"
-              variant="outlined"
-            >
-              Delete
-            </Button>
-          );
-        },
-      },
-    },
   ];
 
   const options = {
@@ -236,28 +183,37 @@ const History = (props) => {
     download: false,
     filterType: "multiselect",
     responsive: "standard",
-    // selectableRows: "multiple", // to enable the checkbox when deleting the rows
-    // onRowsDelete: (rowsDeleted) => {
-    //   const docID = rowsDeleted.data.map((d) => product[d.dataIndex].docID);
-    //   const historyId = rowsDeleted.data.map((d) => product[d.dataIndex].id); // array of all ids to to be deleted
+    selectableRows: "multiple", // to enable the checkbox when deleting the rows
+    onRowsDelete: (rowsDeleted) => {
+      //getting the
+      const docID = rowsDeleted.data.map((d) => product[d.dataIndex].docID);
+      const historyId = rowsDeleted.data.map((d) => product[d.dataIndex].id); // array of all ids to to be deleted
 
-    //   deleteInFirestore(docID, historyId);
-    // },
+      batchDeleteDocuments(docID, historyId);
+    },
   };
-  //deleting data in firebase or deleting the order(s)
-  async function deleteInFirestore(docID, historyId) {
+  //deleting data in firebase or deleting the history of the products
+  async function batchDeleteDocuments(docID, historyId) {
     try {
+      console.log(docID, "docs");
+      console.log(historyId, "history");
+
       const batch = writeBatch(db);
 
-      historyId.forEach((id) => {
-        batch.delete(doc(db, "products", docID, "history", id));
-        console.log(docID, "documentID");
-        console.log(historyId, "historyID");
-      });
+      for (let i = 0; i < docID.length; i++) {
+        // console.log(docID[i].trim());
+        const docRef = doc(
+          db,
+          "products",
+          docID[i].trim(),
+          "history",
+          historyId[i]
+        );
+        // console.log(i, "deleting", docRef.path);
+        batch.delete(docRef);
+      }
+
       await batch.commit();
-      // alert("deleted");
-      // window.location.reload();
-      console.log("deleted");
     } catch (err) {
       console.log(err);
     }

@@ -95,18 +95,18 @@ function App() {
                     </Layout>
                   </PrivateRoute>
                 }
-              />
-
-              <Route
-                path="/history"
-                element={
-                  <PrivateRoute>
-                    <Layout>
-                      <History />
-                    </Layout>
-                  </PrivateRoute>
-                }
-              />
+              >
+                <Route
+                  path=":history"
+                  element={
+                    <PrivateRoute>
+                      <Layout>
+                        <History />
+                      </Layout>
+                    </PrivateRoute>
+                  }
+                />
+              </Route>
 
               <Route
                 path="/add-products"

@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+// Page of the products that holds the button or navigation to add a product.
+//also contains the tab for the list of the products and the list of the history of the products
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import {
   Stack,
@@ -56,6 +58,14 @@ const ProductsPage = () => {
     setValue(newValue);
   };
 
+  //useEffect is used to determine which current tab is active even if reloaded
+  useEffect(() => {
+    let path = window.location.pathname;
+    console.log(path);
+    if (path === "/Products" && value !== 0) setValue(0);
+    else if (path === "/Products/History" && value !== 1) setValue(1);
+  }, [value]); //value is the dependency array as value changes upon which tab is selected
+
   return (
     <div>
       <Grid style={{ padding: "1rem" }}>
@@ -82,8 +92,18 @@ const ProductsPage = () => {
               onChange={handleChange}
               aria-label="basic tabs example"
             >
-              <Tab label="Products" {...a11yProps(0)} />
-              <Tab label="History of Products" {...a11yProps(1)} />
+              <Tab
+                label="Products"
+                {...a11yProps(0)}
+                to="Products"
+                component={Link}
+              />
+              <Tab
+                label="History of the Products"
+                {...a11yProps(0)}
+                to="/Products/History"
+                component={Link}
+              />
             </Tabs>
           </Box>
           <TabPanel value={value} index={0}>
