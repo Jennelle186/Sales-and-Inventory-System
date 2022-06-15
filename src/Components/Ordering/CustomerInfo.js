@@ -96,6 +96,11 @@ const CustomerInfo = ({
   //   });
   // }
 
+  //The function where it loops through all of the items that were placed in the cart items.
+  //It retrieve the id of the product and it's quantity which would then be used and will be looped over
+  //to decrement this in the database
+  //increment is used here as it is a built-in function of firebase with the -1 as this signify that this is supposed to
+  //subtract the quantity of the item that was placed.
   async function updateData() {
     for (const item of cartItems) {
       const docRef = doc(db, "products", item.id);
@@ -138,6 +143,7 @@ const CustomerInfo = ({
     }
   }
 
+  //after submission, this function is used to clear up all of the fields..
   const clearInfo = () => {
     setFirstName("");
     setLastName("");
@@ -178,6 +184,7 @@ const CustomerInfo = ({
     }
   }
 
+  //submitting the order and customer details in the database orders
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -202,11 +209,11 @@ const CustomerInfo = ({
         credit,
       });
       // addUser(); //function add user
-      updateData();
-      recordStockOut();
-      clearInfo();
-      handleCartClearance();
-      setOpen(true);
+      updateData(); //calls the function to subtract the products in the inventory
+      recordStockOut(); // calls the function record the stock-out in the history of the products
+      clearInfo(); // calls the function to clear up the search field
+      handleCartClearance(); // calls the function to clear up the cart items or the item that were placed.
+      setOpen(true); //states as a true to call the alert function that the order was submitted.
 
       // console.log("Document written with ID: ", docRef.id);
     } catch (err) {

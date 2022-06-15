@@ -39,6 +39,7 @@ const BoxDashboards = ({ totalAmount }) => {
   useEffect(() => {
     let isMounted = true;
 
+    //function to retrieve the orders with the order status of pending
     const getPending = async () => {
       const ordersRef = collection(db, "orders");
       const q = query(ordersRef, where("orderStatus", "==", "Pending"));
@@ -50,6 +51,7 @@ const BoxDashboards = ({ totalAmount }) => {
       }
     };
 
+    //function to retrieve the order with the order status of ready to be delivered
     const getReadyDelivery = async () => {
       const ordersRef = collection(db, "orders");
       const q = query(
@@ -64,6 +66,7 @@ const BoxDashboards = ({ totalAmount }) => {
       }
     };
 
+    //function to retrieve the order with an order status of delivered
     const getDelivered = async () => {
       const docRef = doc(db, "orders", "counts");
       const docSnap = await getDoc(docRef);
@@ -78,6 +81,7 @@ const BoxDashboards = ({ totalAmount }) => {
       }
     };
 
+    //function to retrieve the products
     const getProducts = async () => {
       const querySnapshot = await getDocs(collection(db, "products"));
       const arr = [];
@@ -270,7 +274,7 @@ const BoxDashboards = ({ totalAmount }) => {
                   <Typography
                     variant={"h6"}
                     gutterBottom
-                    onClick={() => navigate("/stocks", { state: result })}
+                    onClick={() => navigate("/stocks", { state: result })} //passing the variable result which stores the products
                   >
                     {result.length} products for Restocks
                   </Typography>

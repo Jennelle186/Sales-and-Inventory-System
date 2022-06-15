@@ -1,25 +1,15 @@
-import React, { useState, useEffect } from "react";
-import {
-  Container,
-  List,
-  ListItemText,
-  Stack,
-  Card,
-  Typography,
-  Grid,
-  ListItemIcon,
-  ThemeProvider,
-  createTheme,
-} from "@mui/material";
+import React from "react";
+import { Container, ThemeProvider, createTheme } from "@mui/material";
 import { useNavigate, useLocation } from "react-router-dom";
 import MUIDataTable from "mui-datatables";
 
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-
 const StocksAlert = () => {
-  const { state } = useLocation();
+  const { state } = useLocation(); //retrieving the products here
   const navigate = useNavigate();
 
+  //Function where upon clicking on a row, this would direct the user to edit the specific product
+  //the state here holds the data of the rowData[0] which is the id of the chosen product
+  //this then leads the user to edit the chose product
   const handleRowClick = (rowData, rowMeta) => {
     navigate("/edit-products", { state: rowData[0] });
   };
@@ -27,11 +17,12 @@ const StocksAlert = () => {
   const options = {
     filter: true,
     selectableRows: "none",
-    onRowClick: handleRowClick,
+    onRowClick: handleRowClick, //enabling the onRowClick and passing the function of the handleRowClick
     download: false,
     responsive: "standard",
   };
 
+  //these are the columnds, the name here must be similar to the variable name from the database
   const columns = [
     {
       name: "id",
@@ -90,56 +81,6 @@ const StocksAlert = () => {
 
   return (
     <Container>
-      {/* <Typography variant="subtitle1">Products that need restocking</Typography>
-      <Grid
-        container
-        spacing={{ xs: 2, md: 3 }}
-        columns={{ xs: 4, sm: 8, md: 12 }}
-      >
-        {state &&
-          state.map((item, i) => {
-            const obj = item.colorMap;
-
-            for (let x in obj) {
-              if (obj[x] < 10) {
-                return (
-                  <Grid item xs={2} sm={4} md={4} key={i}>
-                    <Stack direction="row" spacing={2}>
-                      <Typography>
-                        {item.prodName} {item.size}
-                      </Typography>
-                      <Typography variant="subtitle">({item.cat})</Typography>
-                      <ListItemIcon>
-                        <ArrowForwardIcon
-                          onClick={(e) =>
-                            navigate("/edit-products", { state: item.id })
-                          }
-                          sx={{
-                            ":hover": {
-                              color: " green", // theme.shadows[20]
-                            },
-                          }}
-                        />
-                      </ListItemIcon>
-                    </Stack>
-                    {Object.entries(item.colorMap).map((color) => (
-                      <>
-                        {color[1] < 10 && (
-                          <>
-                            <ListItemText
-                              secondary={`${color[0]} - ${color[1]}pcs`}
-                            />
-                          </>
-                        )}
-                      </>
-                    ))}
-                  </Grid>
-                );
-              }
-            }
-          })}
-      </Grid> */}
-
       <div style={{ marginTop: "1.5rem", margin: "12px" }}>
         <ThemeProvider theme={createTheme()}>
           <MUIDataTable
