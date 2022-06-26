@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+//This the component to show the alert that it has been successfully submitted
+
+import React from "react";
 import { Snackbar, Alert } from "@mui/material";
 
 const AlertComponent = (props) => {

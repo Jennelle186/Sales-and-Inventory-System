@@ -19,6 +19,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../Firebase/utils";
 import { useNavigate, Link } from "react-router-dom";
 
+//Links or the navigation pages and their names
 const links = [
   {
     to: "/Dashboard",
@@ -37,10 +38,14 @@ const links = [
 const Header = () => {
   //firebase signout
   let navigate = useNavigate();
+
+  //Function to logout the user from the website
+  //This will redirect the user to the login page
+  //The login page is known as the slash one "/"
   const logOut = (aysnc) => {
     signOut(auth)
       .then(() => {
-        console.log("logged out");
+        alert("Logged out");
         navigate("/");
       })
       .catch((error) => {
@@ -49,21 +54,13 @@ const Header = () => {
   };
 
   const [anchorElNav, setAnchorElNav] = useState(null);
-  const [anchorElUser, setAnchorElUser] = useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   return (
@@ -75,6 +72,7 @@ const Header = () => {
       >
         <Container maxWidth="xl">
           <Toolbar disableGutters>
+            {/* This is the logo */}
             <Avatar alt="logo1" src={logo} sx={{ height: 50, width: 50 }} />
 
             <Box

@@ -1,5 +1,6 @@
 import Ordering from "../../Components/Ordering/Ordering";
 
+//The ordering page
 const PageToOrder = () => {
   return (
     <>

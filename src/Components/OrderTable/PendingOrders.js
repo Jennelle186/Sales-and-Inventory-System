@@ -10,28 +10,24 @@ import {
   List,
   ListItemText,
   Typography,
-  TableFooter,
   ThemeProvider,
   createTheme,
   Button,
   IconButton,
   Dialog,
   DialogContent,
-  DialogActions,
 } from "@mui/material";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
 
 import { db } from "../../Firebase/utils";
 import {
   collection,
-  getDocs,
   query,
   orderBy,
   where,
   doc,
   updateDoc,
   onSnapshot,
-  increment,
 } from "firebase/firestore";
 
 import Loading from "../Loading/loading";
@@ -75,6 +71,7 @@ const PendingOrders = () => {
   //     };
   //   }, []);
 
+  //retrieving all of the order status with an order status of pending in asceding order
   useEffect(() => {
     let isMounted = true;
 
@@ -109,11 +106,7 @@ const PendingOrders = () => {
     };
   }, []);
 
-  //this one is using the filter to get orders with an orderStatus of Pending
-  // const filter = orders.filter(
-  //   (v) => v.orderStatus !== undefined && v.orderStatus == "Pending"
-  // );
-
+  //these are the column headers
   const columns = [
     {
       name: "Print",
@@ -421,11 +414,12 @@ const PendingOrders = () => {
   };
   //---------------------------------------
 
+  //function to cancel the order
   const cancel = async (id) => {
     try {
       const orderRef = doc(db, "orders", id);
 
-      // Set the "capital" field of the city 'DC'
+      // Set the order status to cancelled
       await updateDoc(orderRef, {
         orderStatus: "Cancelled",
       });
@@ -460,12 +454,14 @@ const PendingOrders = () => {
   //   });
   // }
 
+  //get the total amount of each rows
   function handleTableChange(action, tableState) {
     // console.log("handleTableChange:... ", tableState.displayData);
     const totalAmount = calculateTotalSum(tableState.displayData);
     setTotal(totalAmount);
   }
 
+  //calculate all of the total amount of all the rows
   const calculateTotalSum = (data) => {
     const totalAmount = data
       .map((a) => a.data[11])

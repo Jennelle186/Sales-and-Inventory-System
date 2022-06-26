@@ -41,6 +41,7 @@ const ReadyToBeDelivered = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  //function to retrieve the order status of ready to be delivered, and arranged by ascending order
   useEffect(() => {
     let isMounted = true;
 
@@ -75,6 +76,7 @@ const ReadyToBeDelivered = () => {
     };
   }, []);
 
+  //these are the column headers or names
   const columns = [
     {
       name: "id",
@@ -350,12 +352,14 @@ const ReadyToBeDelivered = () => {
     );
   }
 
+  //gets all of the total amount of each row
   function handleTableChange(action, tableState) {
     // console.log("handleTableChange:... ", tableState.displayData);
     const totalAmount = calculateTotalSum(tableState.displayData);
     setTotal(totalAmount);
   }
 
+  //calculates the total amount of each row
   const calculateTotalSum = (data) => {
     const totalAmount = data
       .map((a) => a.data[10])

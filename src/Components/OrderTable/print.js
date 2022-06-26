@@ -11,9 +11,7 @@ import {
   Divider,
   Avatar,
   Stack,
-  DialogActions,
   Button,
-  AppBar,
   Box,
 } from "@mui/material";
 import logo from "../../assets/logo.jpg";
@@ -24,12 +22,11 @@ import { getDoc, doc } from "firebase/firestore";
 import "./styles.css";
 
 import jsPDF from "jspdf";
-import html2canvas from "html2canvas";
 
 const Print = (rowData) => {
   const [order, setOrder] = useState([]);
-  const printContainer = useRef(null);
 
+  //function to retrieve the specific data of the row
   const getOrder = async () => {
     const docRef = doc(db, "orders", rowData.rowData);
     const docSnap = await getDoc(docRef);
@@ -55,35 +52,8 @@ const Print = (rowData) => {
     })(); // This immediately runs the func async.
   }, []);
 
-  //generate PDF
-  const generatePdf = () => {
-    var doc = new jsPDF("portrait", "pt", "a4");
-
-    doc.html(document.querySelector("#pdf"), {
-      html2canvas: {
-        // insert html2canvas options here, e.g.
-        // scale: 0.5,
-        // width: width,
-        // height: height,
-        // scale: 0.5,
-        quality: 1,
-      },
-      callback: function (pdf) {
-        pdf.save(`${rowData.rowData}.pdf`);
-      },
-    });
-  };
-
   return (
     <>
-      {/* <Button
-        variant="contained"
-        style={{ float: "right" }}
-        onClick={() => generatePdf()}
-      >
-        Print
-      </Button> */}
-
       <div class="button">
         {" "}
         <Button

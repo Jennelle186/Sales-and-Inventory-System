@@ -2,6 +2,8 @@ import React from "react";
 import { Stack, Button, Grid, ThemeProvider, createTheme } from "@mui/material";
 import { Link } from "react-router-dom";
 import CategoryTable from "../../Components/Category/CategoryTable";
+
+// Page for the category
 const CategoryPage = () => {
   return (
     <div>

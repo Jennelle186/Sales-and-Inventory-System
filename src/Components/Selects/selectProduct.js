@@ -1,34 +1,5 @@
 import React from "react";
-import {
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-  Autocomplete,
-  TextField,
-} from "@mui/material";
-
-// const SelectProduct = ({ value, onChange, names }) => {
-//   return (
-//     <FormControl fullWidth>
-//       <InputLabel htmlFor="vaccinator-name">Products</InputLabel>
-//       <Select value={value} onChange={onChange} fullWidth>
-//         {names &&
-//           names.map((index) => (
-//             <MenuItem
-//               key={index.id}
-//               value={index.id}
-//               // defaultValue={}
-//             >
-//               {index.prodName + " " + index.size}
-//             </MenuItem>
-//           ))}
-//       </Select>
-//     </FormControl>
-//   );
-// };
-
-// export default SelectProduct;
+import { Autocomplete, TextField } from "@mui/material";
 
 const SelectProduct = ({ value, onChange, names }) => {
   //do not show the value of category if it is === S-XL

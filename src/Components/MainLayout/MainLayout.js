@@ -2,6 +2,7 @@ import React from "react";
 import Particles from "../Form/Particles";
 import { Grid } from "@mui/material";
 
+//This is the main layout for the entire project
 const MainLayout = (props) => {
   const styles = {
     root: {
@@ -28,6 +29,7 @@ const MainLayout = (props) => {
         </Grid>
       </Grid>
 
+      {/* The particles here is the background in the logged in page*/}
       <Particles />
     </div>
   );

@@ -34,6 +34,7 @@ const OrderReport = () => {
   useEffect(() => {
     let isMounted = true;
 
+    //retrieves all of the orders and sets to to descending order
     const getOrders = async () => {
       // const querySnapshot = await getDocs(collection(db, "orders"));
       const ordersRef = collection(db, "orders");
@@ -62,6 +63,7 @@ const OrderReport = () => {
     };
   }, []);
 
+  //these are the column headers or names
   const columns = [
     {
       name: "id",

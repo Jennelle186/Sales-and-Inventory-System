@@ -11,6 +11,7 @@ import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 const ForgotPassword = () => {
   const [email, setEmail] = useState();
 
+  //submitting thee password on the amil
   const handleSubmit = async (e) => {
     e.preventDefault();
     const auth = getAuth();
@@ -19,6 +20,7 @@ const ForgotPassword = () => {
         // Password reset email sent!
         // ..
         console.log("email sent");
+        alert("Email sent");
       })
       .catch((error) => {
         const errorCode = error.code;

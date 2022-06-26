@@ -7,6 +7,7 @@ const styles = {
     color: "#1f1009",
   },
 };
+//The design for the button that can be used in any component
 const ButtonForm = ({ children, ...otherProps }) => {
   return (
     <Button

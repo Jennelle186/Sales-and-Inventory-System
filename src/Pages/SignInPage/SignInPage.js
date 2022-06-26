@@ -1,6 +1,6 @@
 import Login from "../../Components/Login/login";
-import { Grid } from "@mui/material";
 
+//The login page
 const SignInPage = () => {
   return (
     <>

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import OrderTab from "./OrderTab";
 
 const OrderPage = () => {
+  //order page with the button and the different order tabs (Pending, Ready to be delivered, delivered, cancelled, returned )
   return (
     <div>
       <Grid style={{ padding: "1rem" }}>

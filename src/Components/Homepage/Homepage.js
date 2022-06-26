@@ -8,14 +8,15 @@ import { Grid, Button } from "@mui/material";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import pdf from "../../assets/User-Manual.pdf";
 
+// The component for the homepage
 const Homepage = () => {
   return (
     <>
+      {/* The component for the header */}
       <Header />
 
       <Grid style={{ padding: "1rem" }}>
-        {/* sample is logo picture, change this to pdf */}
-
+        {/* This is where the pdf is located  */}
         <a href={pdf} target="_blank" style={{ textDecoration: "none" }}>
           <Button variant="outlined" startIcon={<MenuBookIcon />}>
             User Manual

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import History from "../../Components/HistoryofProducts/history";
 import ButtonForm from "../../Components/Button/ButtonForm";
 
+//page for the history along with the button to go back to the previous page
 const HistoryPage = () => {
   const navigate = useNavigate();
   return (

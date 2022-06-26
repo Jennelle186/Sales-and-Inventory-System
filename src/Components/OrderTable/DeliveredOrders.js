@@ -8,10 +8,8 @@ import {
   TableHead,
   TableRow,
   List,
-  ListItem,
   ListItemText,
   Typography,
-  TableFooter,
   ThemeProvider,
   createTheme,
   Dialog,
@@ -34,8 +32,8 @@ import {
 
 import Loading from "../Loading/loading";
 import Print from "./print";
-import ReturnedOrders from "./ReturnedOrders";
 
+//Component or page of all the delivered orders
 const OrderReport = () => {
   const [total, setTotal] = useState(0);
   const [orders, setOrders] = useState([]);
@@ -77,6 +75,7 @@ const OrderReport = () => {
     };
   }, []);
 
+  //these are the column names
   const columns = [
     {
       name: "id",

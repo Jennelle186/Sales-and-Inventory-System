@@ -8,10 +8,8 @@ import {
   TableHead,
   TableRow,
   List,
-  ListItem,
   ListItemText,
   Typography,
-  TableFooter,
   ThemeProvider,
   createTheme,
   Dialog,
@@ -32,6 +30,7 @@ import {
 import Loading from "../Loading/loading";
 import Print from "./print";
 
+//This is the page or component for all of the cancelled orders
 const Cancelled = () => {
   const [total, setTotal] = useState(0);
   const [orders, setOrders] = useState([]);
@@ -40,6 +39,7 @@ const Cancelled = () => {
   useEffect(() => {
     let isMounted = true;
 
+    //function to retrieve all of the cancelled orders and it will be retrieved in descending order
     const getOrders = async () => {
       // const querySnapshot = await getDocs(collection(db, "orders"));
       const ordersRef = collection(db, "orders");
@@ -57,8 +57,8 @@ const Cancelled = () => {
         });
       });
       if (isMounted) {
-        setOrders(arr);
-        setLoading(true);
+        setOrders(arr); //pushing all of the arr values in the useState setOrders which is an array
+        setLoading(true); // while it is mounted or still retrieving all of the values, this will set the loading to true
       }
     };
 
@@ -72,6 +72,7 @@ const Cancelled = () => {
     };
   }, []);
 
+  //these are the column names
   const columns = [
     {
       name: "id",
@@ -301,12 +302,14 @@ const Cancelled = () => {
     },
   ];
 
+  //function to get the total of all the rows
   function handleTableChange(action, tableState) {
     // console.log("handleTableChange:... ", tableState.displayData);
     const totalAmount = calculateTotalSum(tableState.displayData);
     setTotal(totalAmount);
   }
 
+  //function to sum all of the total amount of each rows
   const calculateTotalSum = (data) => {
     const totalAmount = data
       .map((a) => a.data[10])
@@ -349,6 +352,7 @@ const Cancelled = () => {
     renderExpandableRow: (rowData, rowMeta) => {
       return (
         <tr>
+          {/* this is the data for each rows, expandable rows  */}
           <td colSpan={4}>
             <TableContainer>
               <Table style={{ margin: "0 auto" }}>

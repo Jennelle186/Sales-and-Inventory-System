@@ -8,6 +8,7 @@ import {
   DialogActions,
 } from "@mui/material";
 
+//This is the reusable component for the modal when deleting
 const Modal = ({
   id,
   title,
@@ -17,6 +18,7 @@ const Modal = ({
   handleClose,
   deleteProductCallBack,
 }) => {
+  //this is the function for deleteing the product
   const handleConfirm = async () => {
     await deleteProductCallBack(id);
     alert("Successful!");

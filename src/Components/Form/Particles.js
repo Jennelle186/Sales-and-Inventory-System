@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import Particles from "react-tsparticles";
 
+//This is the background of the login page
 class Canvas extends Component {
   render() {
     return (

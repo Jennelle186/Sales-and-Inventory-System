@@ -6,7 +6,9 @@
     align-items: center;
   } */
   /* Styles go here */
-  
+
+
+  /* CSS FOR THE PRINT.JS, THIS IS THE DESIGN FOR PRINTING THE ORDER RECEIPT */
   .page-footer {
     display: none;
   }
