@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Getting Started
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created using ReactJS with Material-UI as its main library for the design. Firebase was then used as its backend. 
 
 ## Available Scripts
 
