@@ -27,7 +27,9 @@ You may download it here: https://drive.google.com/file/d/1WOHd12aIlEatNaarHFP91
 12. Click on Firestore Database on the Build panel and click on the “Create Database”.
 13. Thereafter, You may start on the production mode.
 14. You may choose a location but “asia-southeast2” is recommended the most. Thereafter, wait for it to load as this might take a while.
-15. Go to the “security rules” and update the code found in the Google Drive link on page . This will ensure that only a logged in user will be able to perform read and write functions in the database.
+15. Go to the “security rules” and update the code found in the Google Drive link on page 14 . This will ensure that only a logged in user will be able to perform read and write functions in the database.
+16. Click on “Hosting” under the build panel and click the “Get started” button. Thereafter, you may proceed with the steps below.
+
 
 ## How to open the project in Visual Studio Code
 
