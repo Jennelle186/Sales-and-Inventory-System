@@ -19,6 +19,21 @@ Unzip the files and open Visual Studio Code.
 
 Click on Open Folder and locate the folder of the unzip files and click on it.
 
+## How to deploy the project
+
+From the Visual Studio Code terminal, enter these “npm i -g firebase-tools”
+
+Enter “Firebase login”. You need to be logged in to your Gmail account that is
+connected with your Firebase project.
+  
+  If you are using another account, you may enter “firebase login –reauth”
+  
+  Follow the given link and this will direct you to this page. You may then
+  choose the Gmail account that is connected to your Firebase project.
+
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
