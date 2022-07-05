@@ -78,7 +78,7 @@ According to the Firebase documentation, "Firebase provides powerful tools for o
     3. Delivered Orders
     4. History of the Products
 
-Visiting these web pages, this will show as an error in the console, thereafter, you may just click on the link which will direct you to the Firebase project. Firebase will automatically build this index for you. For more information, you may click on the Google Drive link provided above and go to page 23. 
+Visiting these web pages, this will show as an error in the console, thereafter, you may just click on the link which will direct you to the Firebase project. Firebase will automatically build this index for you. For more information, you may click on the Google Drive link provided above and go to page 23 which includes pictures on what it loooks like. 
 
 
 
