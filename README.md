@@ -27,7 +27,7 @@ You may download it here: https://drive.google.com/file/d/1WOHd12aIlEatNaarHFP91
 12. Click on Firestore Database on the Build panel and click on the “Create Database”.
 13. Thereafter, You may start on the production mode.
 14. You may choose a location but “asia-southeast2” is recommended the most. Thereafter, wait for it to load as this might take a while.
-15. Go to the “security rules” and update the code found in the Google Drive link on page 14 . This will ensure that only a logged in user will be able to perform read and write functions in the database.
+15. Go to the “security rules” and update the code found in the Google Drive link on page 13 . This will ensure that only a logged in user will be able to perform read and write functions in the database.
 16. Click on “Hosting” under the build panel and click the “Get started” button. Thereafter, you may proceed with the steps below.
 
 
@@ -69,6 +69,18 @@ connected with your Firebase project.
 13. Enter "Firebase deploy" and wait for the message that says "Deploy complete!" along with the links for the project console and the hostung URL. 
 
 14. Click on the hosting URL to view the hosted website.
+
+## Index in Firestore for querying
+According to the Firebase documentation, "Firebase provides powerful tools for ordering and querying your data. Specifically, Firebase allows you to do ad-hoc queries on a collection of nodes using any common child key. As your app grows, the performance of this query degrades. However, if you tell Firebase about the keys you will be querying, Firebase will index those keys at the servers, improving the performance of your queries.". Therefore, in this project, there are several webpages that needs this index querying. These are the following web pages:
+
+    1. Pending Orders
+    2. Ready to be Delivered Orders
+    3. Delivered Orders
+    4. History of the Products
+
+Visiting these web pages, this will show as an error in the console, thereafter, you may just click on the link which will direct you to the Firebase project. Firebase will automatically build this index for you. For more information, you may click on the Google Drive link provided above and go to page 23. 
+
+
 
 ## Available Scripts
 
