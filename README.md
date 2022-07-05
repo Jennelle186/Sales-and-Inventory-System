@@ -1,7 +1,7 @@
 # Getting Started
 
 This project was created using ReactJS with Material-UI as its main library for the design. Firebase was then used as its backend. 
-A google drive link is also available for the step-by-step instructions with pictures on how to deploy the system. You may go to this link: https://drive.google.com/file/d/1WOHd12aIlEatNaarHFP91bU62LfvB2gr/view?usp=sharing
+A google drive link is also available for the step-by-step instructions with pictures on how to deploy the system. You may go to this link: https://drive.google.com/file/d/1Y2ke42PU9oxhNz5SeseAOZKuJ7H6ayBb/view?usp=sharing
 
 ## What to Install
 
