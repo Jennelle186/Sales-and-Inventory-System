@@ -5,7 +5,12 @@ A google drive link is also available for the step-by-step instructions with pic
 
 ## What to Install
 
-You may need to install Visual Studio Code if you do not have it installed in your computer. You may download it here: https://code.visualstudio.com/download
+You may need to install Visual Studio Code if you do not have it installed in your computer. 
+You may download it here: https://code.visualstudio.com/download
+
+Install Node.js if you do not have it installed in your computer. 
+You may download it here: https://drive.google.com/file/d/1WOHd12aIlEatNaarHFP91bU62LfvB2gr/view
+
 
 ## Available Scripts
 
