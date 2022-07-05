@@ -5,34 +5,50 @@ A google drive link is also available for the step-by-step instructions with pic
 
 ## What to Install
 
-You may need to install Visual Studio Code if you do not have it installed in your computer. 
+1. You may need to install Visual Studio Code if you do not have it installed in your computer. 
 You may download it here: https://code.visualstudio.com/download
 
-Install Node.js if you do not have it installed in your computer. 
+2. Install Node.js if you do not have it installed in your computer. 
 You may download it here: https://drive.google.com/file/d/1WOHd12aIlEatNaarHFP91bU62LfvB2gr/view
 
 ## How to open the project in Visual Studio Code
 
-Download the zip files of this project.
+1. Download the zip files of this project.
 
-Unzip the files and open Visual Studio Code.
+2. Unzip the files and open Visual Studio Code.
 
-Click on Open Folder and locate the folder of the unzip files and click on it.
+3. Click on Open Folder and locate the folder of the unzip files and click on it.
 
 ## How to deploy the project
 
-From the Visual Studio Code terminal, enter these “npm i -g firebase-tools”
+1. From the Visual Studio Code terminal, enter these “npm i -g firebase-tools”
 
-Enter “Firebase login”. You need to be logged in to your Gmail account that is
+2. Enter “Firebase login”. You need to be logged in to your Gmail account that is
 connected with your Firebase project.
+
+3. If you are using another account, you may enter “firebase login –reauth”
+
+4. Follow the given link and this will direct you to this page. You may then choose the Gmail account that is connected to your Firebase project.
   
-  If you are using another account, you may enter “firebase login –reauth”
-  
-  Follow the given link and this will direct you to this page. You may then
-  choose the Gmail account that is connected to your Firebase project.
+5. Back to the Visual Studio Code terminal, Enter “firebase init”
 
+6. Pick firebase hosting
 
+7. Select “choose an existing project”
 
+8. Choose what your Firebase Project is
+
+9. You will be asked with the question, "What do you want to use as your public directory?", Enter “build”
+
+10. You will be asked with the question, "Configure as a single-page app?", Enter "yes"
+
+11. You will be asked with the questions, "Set up automatic builds?", Enter "no"
+
+12. Enter "npm run build" and wait for it to load. This might take a while
+
+13. Enter "Firebase deploy" and wait for the message that says "Deploy complete!" along with the links for the project console and the hostung URL. 
+
+14. Click on the hosting URL to view the hosted website.
 
 ## Available Scripts
 
