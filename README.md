@@ -11,6 +11,24 @@ You may download it here: https://code.visualstudio.com/download
 2. Install Node.js if you do not have it installed in your computer. 
 You may download it here: https://drive.google.com/file/d/1WOHd12aIlEatNaarHFP91bU62LfvB2gr/view
 
+## Creating a Firebase Project for the web application
+
+1. You will need a Gmail Account for your Firebase project. You may click on the Google drive link provided above for a detailed step-by-step instructions on how to create one. 
+2. With your signed in Gmail account, click on the button ‘console’.
+3. Click on the “Create Project”.
+4. Start by entering what your project name will be. To continue with the process, you must check the 2 checkboxes and not to leave a blank on the project name. Click continue to proceed.
+5. You may choose not to enable these analytics for the project. Click on continue to proceed and wait for the project to be completed.
+6. You may click ‘continue` after seeing a display message on the screen that the project is ready.
+7. Click on the icon "</>" with a tooltip of “web”.
+8. Enter the name of your application. The name entered here will also be the domain name of the web application. You may uncheck the Firebase hosting as you can still set this up later.
+9. You may click “continue to console” as shwon in the screen.
+10. Click on the “Build” and click on the "Authentication“. To proceed, click on the "Get Started” button.
+11. Enable Email/Password
+12. Click on Firestore Database on the Build panel and click on the “Create Database”.
+13. Thereafter, You may start on the production mode.
+14. You may choose a location but “asia-southeast2” is recommended the most. Thereafter, wait for it to load as this might take a while.
+15. Go to the “security rules” and update the code found in the Google Drive link on page . This will ensure that only a logged in user will be able to perform read and write functions in the database.
+
 ## How to open the project in Visual Studio Code
 
 1. Download the zip files of this project.
