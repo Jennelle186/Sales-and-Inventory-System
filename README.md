@@ -11,6 +11,13 @@ You may download it here: https://code.visualstudio.com/download
 Install Node.js if you do not have it installed in your computer. 
 You may download it here: https://drive.google.com/file/d/1WOHd12aIlEatNaarHFP91bU62LfvB2gr/view
 
+## How to open the project in Visual Studio Code
+
+Download the zip files of this project.
+
+Unzip the files and open Visual Studio Code.
+
+Click on Open Folder and locate the folder of the unzip files and click on it.
 
 ## Available Scripts
 
