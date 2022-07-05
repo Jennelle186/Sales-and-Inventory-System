@@ -28,7 +28,7 @@ connected with your Firebase project.
 
 3. If you are using another account, you may enter “firebase login –reauth”
 
-4. Follow the given link and this will direct you to this page. You may then choose the Gmail account that is connected to your Firebase project.
+4. Follow the given link and this will direct you a page for you to choose your gmail account that is connected with your Firebase project. You may then choose the Gmail account that is connected to your Firebase project.
   
 5. Back to the Visual Studio Code terminal, Enter “firebase init”
 
