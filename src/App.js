@@ -12,6 +12,7 @@ import PageToOrder from "./Pages/PageToOrder/PageToOrder";
 import EditProduct from "./Components/EditProduct/EditProduct";
 import AddCategory from "./Components/Category/AddCategory";
 import CategoryPage from "./Pages/CategoryPage/categoryPage";
+import AboutUs from "./Pages/About Us/AboutUs";
 
 import PendingOrders from "./Components/OrderTable/PendingOrders";
 import ReadyToBeDelivered from "./Components/OrderTable/ReadyToBeDelivered";
@@ -256,6 +257,15 @@ function App() {
             element={
               <MainLayout>
                 <ForgotPasswordPage />
+              </MainLayout>
+            }
+          />
+
+          <Route
+            path="/About-Us"
+            element={
+              <MainLayout>
+                <AboutUs />
               </MainLayout>
             }
           />

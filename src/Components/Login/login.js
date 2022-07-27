@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import CardComponent from "../Cards/CardComponent";
 import {
@@ -8,7 +8,6 @@ import {
   IconButton,
   Avatar,
   Typography,
-  Button,
 } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
@@ -134,6 +133,15 @@ const Login = (props) => {
           </Grid>
         </form>
       </CardComponent>
+
+      <Link to="/About-Us" style={{ textDecoration: "none" }}>
+        <Typography
+          variant="subtitle2"
+          style={{ color: "#B2BEB5", marginTop: "3rem" }}
+        >
+          Developed by Lines Hub Group
+        </Typography>
+      </Link>
     </>
   );
 };
