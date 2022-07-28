@@ -58,7 +58,6 @@ const OrderTab = () => {
   //useEffect is used to determine which current tab is active even if reloaded
   useEffect(() => {
     let path = window.location.pathname;
-    console.log(path);
     if (path === "/Order/Pending-Orders" && value !== 0) setValue(0);
     else if (path === "/Order/Ready-to-be-delivered" && value !== 1)
       setValue(1);
@@ -74,6 +73,7 @@ const OrderTab = () => {
           value={value}
           onChange={handleChange}
           aria-label="basic tabs example"
+          variant="scrollable"
         >
           <Tab
             label="Pending"

@@ -44,7 +44,7 @@ const EditProduct = (props) => {
   const [supplier, setSupplier] = useState("");
 
   //for the radio button----------------------------------
-  const [value, setValue] = React.useState("stock-in");
+  const [value, setValue] = useState("stock-in");
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -259,6 +259,8 @@ const EditProduct = (props) => {
     }
   };
 
+  // console.log(value === "stock-in" ? "stock-in" : "modified detail");
+
   return (
     <div>
       <Stack direction="row" justifyContent="start" style={{ margin: "1rem" }}>
@@ -269,7 +271,7 @@ const EditProduct = (props) => {
 
       {loading ? (
         <>
-          <CardComponent title="Edit Product">
+          <CardComponent title="Update Product">
             <FormControl>
               <FormLabel id="demo-controlled-radio-buttons-group">
                 Edit the product details or just stock in?
@@ -329,6 +331,7 @@ const EditProduct = (props) => {
                         name="prodName" //<---- name attribute similar to the variable saved in db
                         fullWidth
                         onChange={changeHandler(index)}
+                        disabled={value === "stock-in" ? true : false}
                       />
                     </Grid>
 
@@ -339,6 +342,7 @@ const EditProduct = (props) => {
                         variant="outlined"
                         label="Price"
                         fullWidth
+                        disabled={value === "stock-in" ? true : false}
                         InputProps={{
                           startAdornment: (
                             <InputAdornment position="start">₱</InputAdornment>
@@ -366,6 +370,7 @@ const EditProduct = (props) => {
                           name="supplier" //<---- name attribute similar to the variable saved in db
                           fullWidth
                           onChange={changeHandler(index)}
+                          disabled={value === "stock-in" ? true : false}
                         />
                       </Grid>
                     </Grid>

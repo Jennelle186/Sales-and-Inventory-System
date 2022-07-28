@@ -124,8 +124,8 @@ const Header = () => {
             </Box>
 
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              {links.map((link) => (
-                <Link to={link.to} style={{ textDecoration: "none" }}>
+              {links.map((link, i) => (
+                <Link to={link.to} style={{ textDecoration: "none" }} key={i}>
                   <Button
                     onClick={handleCloseNavMenu}
                     sx={{ my: 2, color: "white", display: "block" }}
