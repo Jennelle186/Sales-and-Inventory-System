@@ -67,7 +67,7 @@ const Login = (props) => {
                 label="Email"
                 fullWidth
                 required
-                autoComplete
+                autoComplete="on"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />

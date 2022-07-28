@@ -5,14 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 //firebase
 import { db } from "../../Firebase/utils";
-import {
-  collection,
-  getDocs,
-  deleteDoc,
-  doc,
-  collectionGroup,
-  query,
-} from "firebase/firestore";
+import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 
 import Modal from "../Modal/Modal";
 import Loading from "../Loading/loading";
@@ -196,20 +189,11 @@ const ProductTable = () => {
     },
   ];
 
-  const [id, setId] = useState("");
-
-  const handleRowClick = (rowData) => {
-    console.log(rowData[0]);
-    // navigate("/stock-details", { state: rowData[0] });
-    // setId(rowData[0]);
-  };
-
   const options = {
     filter: true,
     selectableRows: "none",
     responsive: "standard",
     download: false,
-    onRowClick: handleRowClick,
   };
 
   let sample = "Are you sure you want to delete this product?";

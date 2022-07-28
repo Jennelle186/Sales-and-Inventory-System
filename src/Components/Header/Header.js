@@ -108,8 +108,8 @@ const Header = () => {
                 }}
                 className="active"
               >
-                {links.map((link) => (
-                  <MenuItem onClick={handleCloseNavMenu}>
+                {links.map((link, i) => (
+                  <MenuItem onClick={handleCloseNavMenu} key={i}>
                     <Typography textAlign="center">
                       <Link
                         to={link.to}

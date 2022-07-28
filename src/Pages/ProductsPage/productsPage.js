@@ -61,7 +61,6 @@ const ProductsPage = () => {
   //useEffect is used to determine which current tab is active even if reloaded
   useEffect(() => {
     let path = window.location.pathname;
-    console.log(path);
     if (path === "/Products" && value !== 0) setValue(0);
     else if (path === "/Products/History" && value !== 1) setValue(1);
   }, [value]); //value is the dependency array as value changes upon which tab is selected

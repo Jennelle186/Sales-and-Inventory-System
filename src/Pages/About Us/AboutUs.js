@@ -64,7 +64,7 @@ const AboutUs = () => {
                 I am the Lead Developer for this OJT Project and served as the
                 leader of the group at the same time. I oversee the entire
                 project including the development and documentation. My skills
-                include ReactJS, Firebase, HTML, CSS, Adobe XD, and Figma.
+                include ReactJS, Firebase, HTML, CSS, Adobe XD, Figma and more.
               </Typography>
             </CardContent>
           </Card>
@@ -83,7 +83,7 @@ const AboutUs = () => {
                 Joana Mae S. Francisco
               </Typography>
               <Typography paragraph variant="body2" color="text.secondary">
-                Tester
+                Documentation and Tester
               </Typography>
               <Typography paragraph>
                 I'm a student volunteer and a sport enthusiast. I love reading
@@ -100,16 +100,24 @@ const AboutUs = () => {
           <Card sx={{ maxWidth: 250 }} style={styledCard}>
             <CardMedia
               component="img"
-              image="https://drive.google.com/uc?id=1q-yfB7Kp4XYLnyqKibhopxyqUE4Na6LZ"
+              image="https://drive.google.com/uc?id=1LTx4tAO5W7OXvtDlXGidWJvGCAVLP4xX"
               alt="Ceed Jennelle B. Lorenzo"
             />
+
             <CardContent>
               {" "}
               <Typography variant="subtitle1" color="text.primary">
-                Ceed Jennelle B. Lorenzo
+                Imran Al-Rashid S. Nur
               </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Lead Developer
+              <Typography paragraph variant="body2" color="text.secondary">
+                Documentation and Tester
+              </Typography>
+              <Typography paragraph>
+                I have a basic knowledge of HTML, CSS and some common known
+                programming languages and has an ambition to be an IT
+                professional. I contributed in this on-the-job-training project
+                by working on some snippet of codes and helped tested the system
+                for errors.
               </Typography>
             </CardContent>
           </Card>
