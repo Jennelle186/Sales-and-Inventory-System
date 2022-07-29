@@ -185,8 +185,6 @@ const EditProduct = (props) => {
     }
 
     historyStore(); // saving this in a subcollection "history"
-
-    console.log("done");
   };
 
   //deleting the specific color
@@ -216,20 +214,20 @@ const EditProduct = (props) => {
           cat,
           supplier,
           createdDate: new Date(),
-          status: "stock-in",
+          status: colorList.length > 0 ? "Stock-in" : "Modified details", //if there's no entered additional color then it will be saved as modified details else it will be saved as stock-in
         });
       });
-
-      console.log("saved");
     } catch (err) {
       console.log(err);
     }
   };
 
+  // console.log(colorList.length > 0 ? "Modified details" : "empty");
+
   //individual stock in of the colors
   const handleStockIn = async (color, value) => {
     const stocks = value ? Number(value) : 0;
-    console.log(stocks, "stocks");
+
     try {
       const ref = doc(db, "products", state);
       await updateDoc(ref, {
@@ -477,6 +475,11 @@ const EditProduct = (props) => {
                                       name="colorStocks"
                                       type="number"
                                       id="colorStocks"
+                                      InputProps={{
+                                        inputProps: {
+                                          min: 0,
+                                        },
+                                      }}
                                       required
                                       value={singleColor.colorStocks}
                                       onChange={(e) =>
